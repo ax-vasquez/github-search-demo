@@ -1,1 +1,3 @@
-console.log(`Hello!`)
+import { initServer } from "./server";
+
+initServer()
