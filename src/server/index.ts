@@ -19,6 +19,6 @@ app.get(`/user/following`, getFollowingForUser)
 app.get(`/user/repos/starred`, getStarredReposForUser)
 
 export function initServer() {
-    app.listen(3000)
+    app.listen(process.env.PORT)
 }
   
