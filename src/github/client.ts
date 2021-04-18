@@ -51,4 +51,15 @@ export class GithubClient {
             username
         })
     }
+
+    /**
+     * @param param0 
+     * @see https://octokit.github.io/rest.js/v18#activity-list-repos-starred-by-user
+     * @returns 
+     */
+    async getStarredReposForUser({ username }: { username: string }) {
+        return this.octokit.rest.activity.listReposStarredByUser({
+            username
+        })
+    }
 }
