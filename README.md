@@ -28,5 +28,6 @@ Base URL for the deployed API: https://axv-github-user-search-demo.herokuapp.com
 | `/user/repos/starred` | `username` | Get the list of repos that the user has starred |
 
 ### Local, manual testing
+> Before you start testing, if you haven't already done so, **create a `.env` file at the root of the repo** and modify it so that it has a value for `PORT`; set it to whatever you like
 1. Start the application with `yarn start:local`
-2. Test the various endpoints listed above at the base URL `http://localhost:3000`
+2. Test the various endpoints listed above at the base URL `http://localhost:<PORT>`
