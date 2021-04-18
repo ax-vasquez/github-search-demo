@@ -1,12 +1,19 @@
 import express from "express"
 import { githubClient, USER_QUALIFIER } from "../../constants"
+import { ORDER, SORT } from "../../github/client"
 import { UserSearchResultResponse } from "../types"
 
 export function getGithubUsers(
   req: express.Request,
   res: express.Response
 ) {
-    const { query } = req.query
+    const { 
+        query,
+        sort,
+        order,
+        per_page,
+        page 
+    } = req.query
 
     try {
         let userQuery: string
@@ -16,7 +23,14 @@ export function getGithubUsers(
             userQuery = query + USER_QUALIFIER
         }
 
-        return githubClient.getUsers({ q: userQuery })
+        return githubClient.getUsers(
+            { 
+                q: userQuery, 
+                sort: sort as SORT,
+                order: order as ORDER,
+                per_page: per_page as number | undefined,
+                page: page as number | undefined,
+            })
             .then(response => {
                 const users = response.data as UserSearchResultResponse
                 res.send(users)
