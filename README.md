@@ -14,6 +14,18 @@ The primary API demonstrated in this project is https://developer.github.com/v3/
 5. Records in the list can be clicked so the user is navigated to the correct user's GitHub page
 
 ## Testing instructions
+There is a live demo of this server deployed on Heroku. There is no front end deployed there, so it's only for the API. The React app will be deployed elsewhere.
+
+Base URL for the deployed API: https://axv-github-user-search-demo.herokuapp.com
+
+**API Endpoints**
+| Endpoint | Query Parameters | Description |
+| -------- | ---------- | ----------- |
+| `/users` | `q`, `sort?`, `order?`, `per_page?`, `page?` | Get a list of users by the given query parameter (`q`), with some optional parameters to assist in pagination |
+| `/user` | `username` | Get basic information about a given user, such as their bio, company, etc. |
+| `/user/followers` | `username` | Get the list of users that are following the given user |
+| `/user/following` | `username` | Get the list of users that the given user is following |
+| `/user/repos/starred` | `username` | Get the list of repos that the user has starred |
 
 ### Local, manual testing
 1. Start the application with `yarn start:local`
