@@ -3,7 +3,8 @@ import {
     getGithubUsers,
     getFollowersForUser,
     getFollowingForUser,
-    getStarredReposForUser
+    getStarredReposForUser,
+    getUser
 } from "./route-handlers"
 
 var app = express()
@@ -11,6 +12,7 @@ var app = express()
 app.use(express.urlencoded())
 app.use(express.json())
 
+app.get(`/user`, getUser)
 app.get(`/users`, getGithubUsers)
 app.get(`/user/followers`, getFollowersForUser)
 app.get(`/user/following`, getFollowingForUser)

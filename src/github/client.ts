@@ -62,4 +62,15 @@ export class GithubClient {
             username
         })
     }
+
+    /**
+     * @param param0 
+     * @see https://octokit.github.io/rest.js/v18#users-get-by-username
+     * @returns 
+     */
+     async getUser({ username }: { username: string }) {
+        return this.octokit.rest.users.getByUsername({
+            username
+        })
+    }
 }
