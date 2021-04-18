@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "clean && tsc",
     "start:local": "ts-node src/index.ts",
+    "start": "ts-node src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +20,7 @@
   "homepage": "https://github.com/ax-vasquez/github-search-demo#readme",
   "dependencies": {
     "@octokit/rest": "^18.5.2",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-paginate": "^1.0.2",
     "rimraf": "^3.0.2"
