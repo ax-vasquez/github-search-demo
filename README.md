@@ -28,8 +28,6 @@ Base URL for the deployed API: https://axv-github-user-search-demo.herokuapp.com
 | `/user/repos/starred` | `username` | Get the list of repos that the user has starred |
 
 ### Local, manual testing
+> Before you start testing, if you haven't already done so, **create a `.env` file at the root of the repo** and modify it so that it has a value for `PORT`; set it to whatever you like
 1. Start the application with `yarn start:local`
-2. In a browser tab, paste in the this URL: `http://localhost:3000/users?query=<SEARCH_QUERY>`
-    * `SEARCH_QUERY` is whatever you want to search the users by
-    * For example, `http://localhost:3000/users?query=a` get all users with `a` in their name (though there seems to be some weirdness in some search result; for some reason, the user `snyff` shows up when querying for `a` - this appears to be an issue with either Octokit or the GitHub API)
-        * *Potential idea - it could be that this user renamed themselves recently and it hasn't been reflected in the API? Either way, I've confirmed this is not something I can fix in the scope of this project*
+2. Test the various endpoints listed above at the base URL `http://localhost:<PORT>`
