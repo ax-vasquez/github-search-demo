@@ -26,6 +26,8 @@ Base URL for the deployed API: https://axv-github-user-search-demo.herokuapp.com
 | `/user/followers` | `username` | Get the list of users that are following the given user |
 | `/user/following` | `username` | Get the list of users that the given user is following |
 | `/user/repos/starred` | `username` | Get the list of repos that the user has starred |
+* **NOTE:** There are some issues and limitations with the `/user/followers` and `/user/following` endpoints
+  * **Don't use these endpoints; you can get a better value from the `/user` endpoint (the response contains both fields for the followers and following counts)**
 
 ### Local, manual testing
 > Before you start testing, if you haven't already done so, **create a `.env` file at the root of the repo** and modify it so that it has a value for `PORT`; set it to whatever you like
