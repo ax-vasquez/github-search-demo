@@ -23,8 +23,8 @@ Base URL for the deployed API: https://axv-github-user-search-demo.herokuapp.com
 | -------- | ---------- | ----------- |
 | `/users` | `q`, `sort?`, `order?`, `per_page?`, `page?` | Get a list of users by the given query parameter (`q`), with some optional parameters to assist in pagination |
 | `/user` | `username` | Get basic information about a given user, such as their bio, company, etc. |
-| `/user/followers` | `username` | Get the list of users that are following the given user |
-| `/user/following` | `username` | Get the list of users that the given user is following |
+| ~~`/user/followers`~~ | `username` | Get the list of users that are following the given user |
+| ~~`/user/following`~~ | `username` | Get the list of users that the given user is following |
 | `/user/repos/starred` | `username` | Get the list of repos that the user has starred |
 * **NOTE:** There are some issues and limitations with the `/user/followers` and `/user/following` endpoints
   * **Don't use these endpoints; you can get a better value from the `/user` endpoint (the response contains both fields for the followers and following counts)**
