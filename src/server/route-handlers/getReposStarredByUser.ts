@@ -14,7 +14,7 @@ export function getStarredReposForUser(
             username: username as string
         })
         .then(starredReposRes => {
-            res.send(starredReposRes.data)
+            res.send(starredReposRes)
         })
     } catch (e) {
         res.send({

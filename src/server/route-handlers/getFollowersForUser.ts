@@ -14,7 +14,7 @@ export function getFollowersForUser(
             username: username as string
         })
         .then(followersRes => {
-            res.send(followersRes.data)
+            res.send(followersRes)
         })
     } catch (e) {
         res.send({
