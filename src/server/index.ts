@@ -6,11 +6,14 @@ import {
     getStarredReposForUser,
     getUser
 } from "./route-handlers"
+import cors from "cors"
 
 var app = express()
 
+app.use(cors())
 app.use(express.urlencoded())
 app.use(express.json())
+
 
 app.get(`/user`, getUser)
 app.get(`/users`, getGithubUsers)
