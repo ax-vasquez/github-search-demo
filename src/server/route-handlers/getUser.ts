@@ -16,6 +16,11 @@ export function getUser(
         .then(getUserRes => {
             res.send(getUserRes.data)
         })
+        .catch(e => {
+            res.send({
+                error: e.message
+            })
+        })
     } catch (e) {
         res.send({
             error: e.message

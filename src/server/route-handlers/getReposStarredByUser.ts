@@ -16,6 +16,11 @@ export function getStarredReposForUser(
         .then(starredReposRes => {
             res.send(starredReposRes)
         })
+        .catch(e => {
+            res.send({
+                error: e.message
+            })
+        })
     } catch (e) {
         res.send({
             error: e.message

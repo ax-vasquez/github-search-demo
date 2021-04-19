@@ -16,6 +16,11 @@ export function getFollowersForUser(
         .then(followersRes => {
             res.send(followersRes)
         })
+        .catch(e => {
+            res.send({
+                error: e.message
+            })
+        })
     } catch (e) {
         res.send({
             error: e.message

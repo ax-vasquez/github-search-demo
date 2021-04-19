@@ -35,6 +35,11 @@ export function getGithubUsers(
                 const users = response.data as UserSearchResultResponse
                 res.send(users)
             })
+            .catch(e => {
+                res.send({
+                    error: e.message
+                })
+            })
     } catch (e) {
         if (e.message.includes(`Cannot read property 'includes' of undefined`)) {
             // Emulate an empty response when the user submits an empty query (otherwise they will hit error when submitting an empty response)
