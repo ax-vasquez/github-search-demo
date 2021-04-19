@@ -48,7 +48,8 @@ export class GithubClient {
      */
     async getFollowingForUser({ username }: { username: string }) {
         return this.octokit.rest.users.listFollowingForUser({
-            username
+            username,
+            per_page: 100
         })
     }
 
@@ -59,7 +60,8 @@ export class GithubClient {
      */
     async getStarredReposForUser({ username }: { username: string }) {
         return this.octokit.rest.activity.listReposStarredByUser({
-            username
+            username,
+            per_page: 100
         })
     }
 
@@ -70,7 +72,8 @@ export class GithubClient {
      */
      async getUser({ username }: { username: string }) {
         return this.octokit.rest.users.getByUsername({
-            username
+            username,
+            per_page: 100
         })
     }
 }
